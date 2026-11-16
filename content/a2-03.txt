@@ -1,0 +1,119 @@
+## 37 | A2 | کار و شغل
+I work as a software developer. | من برنامه‌نویس هستم.
+She works part-time at a cafe. | او پاره‌وقت در یک کافه کار می‌کند.
+My boss is very fair. | رئیسم خیلی منصف است.
+I start work at eight thirty. | ساعت هشت و نیم کارم را شروع می‌کنم.
+He is looking for a job. | او دنبال کار می‌گردد.
+We have a team meeting every Monday. | هر دوشنبه جلسه تیمی داریم.
+I'm on my lunch break. | الان وقت ناهارم است.
+She got a promotion last month. | ماه گذشته ترفیع گرفت.
+My salary is not very high. | حقوقم خیلی بالا نیست.
+He works from nine to five. | او از نُه تا پنج کار می‌کند.
+I sent my resume yesterday. | دیروز رزومه‌ام را فرستادم.
+Our company has fifty employees. | شرکت ما پنجاه کارمند دارد.
+>> My name is Daniel, and I'm a software developer. | اسمم دانیال است و برنامه‌نویسم.
+>> I work for a small company in Austin. | برای یک شرکت کوچک در آستین کار می‌کنم.
+>> Our company has fifty employees. | شرکت ما پنجاه کارمند دارد.
+>> My boss is fair, and my coworkers are fun. | رئیسم منصف و همکارانم بامزه هستند.
+>> Every Monday we have a team meeting. | هر دوشنبه جلسه تیمی داریم.
+>> Last month I got a promotion! | ماه گذشته ترفیع گرفتم!
+
+## 38 | A2 | آب‌وهوا
+What's the weather like today? | امروز هوا چطور است؟
+It's sunny and warm. | آفتابی و گرم است.
+It's very windy outside. | بیرون خیلی باد می‌آید.
+It snowed all night. | تمام شب برف آمد.
+The summers here are very humid. | تابستان‌های این‌جا خیلی شرجی است.
+Take an umbrella, it's cloudy. | چتر ببر، هوا ابری است.
+It's freezing this morning. | امروز صبح هوا یخبندان است.
+There was a storm last night. | دیشب طوفان بود.
+I love the fall in Vermont. | پاییز ورمانت را دوست دارم.
+It's going to be hot tomorrow. | فردا هوا گرم می‌شود.
+The temperature is ten degrees. | دما ده درجه است.
+It rarely rains in Arizona. | در آریزونا به‌ندرت باران می‌آید.
+>> The weather in Chicago changes fast. | هوای شیکاگو زود عوض می‌شود.
+>> In the morning it's sunny and warm. | صبح آفتابی و گرم است.
+>> At noon it gets cloudy and windy. | ظهر ابری می‌شود و باد می‌آید.
+>> In the evening it rains. | عصر باران می‌آید.
+>> In winter it's freezing, and it snows a lot. | زمستان یخبندان است و زیاد برف می‌آید.
+>> So I always carry an umbrella and a jacket. | برای همین همیشه چتر و کاپشن همراهم است.
+
+## 39 | A2 | چند وقت یک بار: always و never
+I always drink coffee in the morning. | همیشه صبح قهوه می‌نوشم.
+She never eats breakfast. | او هیچ‌وقت صبحانه نمی‌خورد.
+We usually go out on Fridays. | معمولاً جمعه‌ها بیرون می‌رویم.
+He is often late for work. | او اغلب سر کار دیر می‌رسد.
+I sometimes cook Persian food. | گاهی غذای ایرانی درست می‌کنم.
+They rarely watch movies. | آن‌ها به‌ندرت فیلم تماشا می‌کنند.
+How often do you exercise? | چند وقت یک بار ورزش می‌کنی؟
+I go to the gym twice a week. | هفته‌ای دو بار باشگاه می‌روم.
+She calls her mom every day. | او هر روز به مادرش زنگ می‌زند.
+We hardly ever see each other. | به‌ندرت همدیگر را می‌بینیم.
+I'm never bored at work. | سر کار هیچ‌وقت حوصله‌ام سر نمی‌رود.
+He usually takes the subway. | او معمولاً با مترو می‌رود.
+>> My roommate and I are very different. | من و هم‌خانه‌ام خیلی فرق داریم.
+>> I always wake up early, but he never does. | من همیشه زود بیدار می‌شوم، اما او هیچ‌وقت.
+>> I usually cook at home. | من معمولاً در خانه غذا درست می‌کنم.
+>> He often orders pizza. | او اغلب پیتزا سفارش می‌دهد.
+>> I go to the gym three times a week. | هفته‌ای سه بار باشگاه می‌روم.
+>> He rarely leaves the sofa! | او به‌ندرت از روی مبل بلند می‌شود!
+
+## 40 | A2 | باید: have to و must
+I have to work on Saturday. | شنبه باید کار کنم.
+You must wear a seat belt. | باید کمربند ایمنی ببندی.
+She has to take the early train. | او باید با قطار صبح زود برود.
+We don't have to pay for parking. | لازم نیست پول پارکینگ بدهیم.
+Do I have to bring anything? | باید چیزی بیاورم؟
+You mustn't smoke here. | این‌جا نباید سیگار بکشی.
+He had to leave early yesterday. | دیروز مجبور شد زود برود.
+Students must arrive on time. | دانشجوها باید سر وقت برسند.
+I have to finish this report. | باید این گزارش را تمام کنم.
+You don't have to come. | لازم نیست بیایی.
+We had to wait for an hour. | مجبور شدیم یک ساعت صبر کنیم.
+Does she have to work tonight? | او امشب باید کار کند؟
+>> Tomorrow is a busy day. | فردا روز شلوغی است.
+>> I have to wake up at six. | باید ساعت شش بیدار شوم.
+>> I have to take my son to school. | باید پسرم را به مدرسه ببرم.
+>> Then I have to finish a big report. | بعد باید یک گزارش بزرگ را تمام کنم.
+>> But I don't have to cook dinner. | اما لازم نیست شام درست کنم.
+>> My husband has to do it! | شوهرم باید درست کند!
+
+## 41 | A2 | بهتر است: should
+You should drink more water. | بهتر است آب بیشتری بنوشی.
+We should leave now. | بهتر است الان برویم.
+He shouldn't eat so much sugar. | او نباید این‌قدر شکر بخورد.
+Should I call her? | به او زنگ بزنم؟
+You should see a dentist. | بهتر است پیش دندان‌پزشک بروی.
+They should take a break. | بهتر است کمی استراحت کنند.
+What should I wear tonight? | امشب چه بپوشم؟
+You shouldn't work so late. | نباید تا این دیروقت کار کنی.
+We should ask for directions. | بهتر است آدرس بپرسیم.
+She should learn to drive. | بهتر است رانندگی یاد بگیرد.
+You should try this cake. | باید این کیک را امتحان کنی.
+I should go to bed. | باید بروم بخوابم.
+>> My friend is always tired. | دوستم همیشه خسته است.
+>> I told her, "You should sleep more." | به او گفتم: «باید بیشتر بخوابی.»
+>> "You shouldn't drink coffee at night." | «نباید شب قهوه بنوشی.»
+>> "And you should take a walk every day." | «و بهتر است هر روز پیاده‌روی کنی.»
+>> She said, "Thanks, I should listen to you." | گفت: «ممنون، باید به حرفت گوش کنم.»
+>> Now she feels much better. | حالا حالش خیلی بهتر است.
+
+## 42 | A2 | دعوت و پیشنهاد: let's
+Let's go to the beach. | بیا برویم ساحل.
+Would you like some coffee? | قهوه میل دارید؟
+Do you want to come with us? | می‌خواهی با ما بیایی؟
+How about a movie tonight? | امشب فیلم چطور است؟
+Let's not wait any longer. | بیا بیشتر صبر نکنیم.
+Why don't we order pizza? | چرا پیتزا سفارش ندهیم؟
+I'd love to, thanks! | با کمال میل، ممنون!
+Sorry, I can't make it. | ببخشید، نمی‌توانم بیایم.
+Would you like to join us? | دوست داری به ما بپیوندی؟
+Let's meet at the cafe. | بیا در کافه همدیگر را ببینیم.
+Maybe next time. | شاید دفعه بعد.
+That sounds great! | عالی به نظر می‌رسد!
+>> Hi Jake! Are you free on Saturday? | سلام جیک! شنبه وقتت آزاد است؟
+>> Let's go to the beach. | بیا برویم ساحل.
+>> We can have lunch there. | می‌توانیم آن‌جا ناهار بخوریم.
+>> How about eleven o'clock? | ساعت یازده چطور است؟
+>> Would you like to bring your sister too? | دوست داری خواهرت را هم بیاوری؟
+>> Text me, okay? | پیام بده، باشه؟

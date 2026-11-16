@@ -23,5 +23,7 @@ def trim(path):
     return True
 
 files = sys.argv[1:] or sorted(glob.glob(os.path.join(ROOT, "audio", "*.mp3")))
-n = sum(trim(f) for f in files)
+from concurrent.futures import ThreadPoolExecutor
+with ThreadPoolExecutor(8) as ex:
+    n = sum(ex.map(trim, files))
 print(f"trimmed {n}/{len(files)}")

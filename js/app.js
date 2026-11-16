@@ -453,6 +453,13 @@
     else if (a === "play-reading") playReading();
   });
 
+  /* Test hooks (used by automated fit checks). */
+  window.SentixDebug = {
+    open: (id) => openLesson(id, true),
+    jump(i) { if (!state.lesson) return; flow += 1; A.stop(); clearTimeout(advanceTimer); state.index = i; deal(); render(); },
+    state: () => ({ screen: state.screen, index: state.index, status: state.status, lesson: state.lesson && state.lesson.id }),
+  };
+
   render();
   fetchJson("data/course.json").then((c) => {
     state.course = c;

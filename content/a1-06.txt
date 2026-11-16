@@ -1,0 +1,79 @@
+## 21 | A1 | رنگ‌ها و صفت‌ها
+The sky is blue. | آسمان آبی است.
+I have a black cat. | من یک گربه سیاه دارم.
+She wears a red dress. | او یک لباس قرمز پوشیده است.
+This bag is very light. | این کیف خیلی سبک است.
+The water is cold. | آب سرد است.
+He has a yellow car. | او یک ماشین زرد دارد.
+My grandmother is old but strong. | مادربزرگم پیر اما قوی است.
+The test is easy. | امتحان آسان است.
+That is a long story. | داستانش طولانی است.
+The street is quiet at night. | خیابان شب‌ها ساکت است.
+I like the brown shoes. | کفش‌های قهوه‌ای را دوست دارم.
+The baby is very cute. | بچه خیلی بامزه است.
+>> Today the sky is blue and the sun is warm. | امروز آسمان آبی است و آفتاب گرم است.
+>> I wear my white shirt and brown shoes. | پیراهن سفید و کفش‌های قهوه‌ای‌ام را می‌پوشم.
+>> My sister wears a red dress. | خواهرم یک لباس قرمز می‌پوشد.
+>> We walk in a quiet green park. | در یک پارک ساکت و سرسبز قدم می‌زنیم.
+>> The water in the lake is cold. | آب دریاچه سرد است.
+>> It is a beautiful day. | روز زیبایی است.
+
+## 22 | A1 | جای چیزها: in، on، under
+The keys are in my bag. | کلیدها در کیفم هستند.
+The book is on the shelf. | کتاب روی قفسه است.
+The shoes are under the bed. | کفش‌ها زیر تخت هستند.
+The bank is next to the hotel. | بانک کنار هتل است.
+The car is in front of the house. | ماشین جلوی خانه است.
+The garden is behind the house. | باغچه پشت خانه است.
+The school is between the park and the library. | مدرسه بین پارک و کتابخانه است.
+My phone is on the sofa. | گوشی‌ام روی مبل است.
+The milk is in the fridge. | شیر در یخچال است.
+The cat is under the chair. | گربه زیر صندلی است.
+The picture is above the bed. | عکس بالای تخت است.
+The station is near the market. | ایستگاه نزدیک بازار است.
+>> Where are my keys? | کلیدهایم کجاست؟
+>> They aren't in my bag or on the table. | نه در کیفم هستند و نه روی میز.
+>> Are they under the sofa? No. | زیر مبل هستند؟ نه.
+>> Are they in the car? No. | در ماشین هستند؟ نه.
+>> Oh! They are in my pocket! | آه! در جیبم هستند!
+>> Now I can go to work. | حالا می‌توانم سر کار بروم.
+
+## 23 | A1 | توانستن: can
+I can swim. | من می‌توانم شنا کنم.
+She can speak three languages. | او می‌تواند سه زبان صحبت کند.
+Can you help me? | می‌توانی کمکم کنی؟
+He can't drive. | او نمی‌تواند رانندگی کند.
+We can meet tomorrow. | می‌توانیم فردا همدیگر را ببینیم.
+Can I sit here? | می‌توانم این‌جا بنشینم؟
+They can't come today. | آن‌ها امروز نمی‌توانند بیایند.
+My son can read now. | پسرم الان می‌تواند بخواند.
+I can't find my wallet. | کیف پولم را پیدا نمی‌کنم.
+Can you say that again? | می‌شود دوباره بگویی؟
+You can use my computer. | می‌توانی از کامپیوترم استفاده کنی.
+She can play the piano. | او می‌تواند پیانو بزند.
+>> My friend Maria is amazing. | دوستم ماریا فوق‌العاده است.
+>> She can speak three languages. | می‌تواند سه زبان صحبت کند.
+>> She can play the piano, and she can cook very well. | پیانو می‌زند و خیلی خوب آشپزی می‌کند.
+>> But she can't swim! | اما نمی‌تواند شنا کند!
+>> I can swim, so I can help her. | من می‌توانم شنا کنم، پس می‌توانم کمکش کنم.
+>> We can go to the pool on Saturday. | می‌توانیم شنبه برویم استخر.
+
+## 24 | A1 | الان دارم انجام می‌دهم: ing
+I am reading a book. | دارم کتاب می‌خوانم.
+She is cooking dinner. | او دارد شام درست می‌کند.
+They are playing outside. | آن‌ها دارند بیرون بازی می‌کنند.
+It is raining now. | الان باران می‌آید.
+We are waiting for the bus. | منتظر اتوبوس هستیم.
+What are you doing? | داری چه کار می‌کنی؟
+He is talking on the phone. | او دارد با تلفن صحبت می‌کند.
+The baby is sleeping. | بچه خواب است.
+Are you listening to me? | داری به حرفم گوش می‌دهی؟
+I'm not watching TV. | تلویزیون تماشا نمی‌کنم.
+She is wearing a hat. | او کلاه سرش است.
+My parents are drinking tea. | پدر و مادرم دارند چای می‌نوشند.
+>> It is Sunday evening, and it is raining. | یکشنبه عصر است و باران می‌آید.
+>> My mother is cooking dinner. | مادرم دارد شام درست می‌کند.
+>> My father is reading the news. | پدرم دارد اخبار می‌خواند.
+>> The baby is sleeping. | بچه خواب است.
+>> My brother is talking on the phone. | برادرم دارد با تلفن صحبت می‌کند.
+>> And me? I am learning English! | و من؟ دارم انگلیسی یاد می‌گیرم!

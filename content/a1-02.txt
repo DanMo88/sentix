@@ -1,0 +1,99 @@
+## 2 | A1 | من، تو، او: ضمیرها
+You are my brother. | تو برادر من هستی.
+They are my parents. | آن‌ها پدر و مادر من هستند.
+It is a small dog. | آن یک سگ کوچک است.
+I am tired today. | من امروز خسته‌ام.
+He is very tall. | او خیلی قدبلند است.
+She is a doctor. | او پزشک است.
+We are good friends. | ما دوستان خوبی هستیم.
+They are at home. | آن‌ها خانه هستند.
+It is cold outside. | بیرون سرد است.
+You are very kind. | تو خیلی مهربانی.
+We are from Tehran. | ما اهل تهران هستیم.
+He is my teacher. | او معلم من است.
+>> This is my family. | این خانواده من است.
+>> We are from Tehran. | ما اهل تهران هستیم.
+>> My father is a doctor. He is very tall. | پدرم پزشک است. او خیلی قدبلند است.
+>> My mother is a teacher. She is very kind. | مادرم معلم است. او خیلی مهربان است.
+>> I have a small dog. It is very cute. | من یک سگ کوچک دارم. خیلی بامزه است.
+>> Today it is cold outside, so we are at home. | امروز بیرون سرد است، برای همین خانه هستیم.
+
+## 3 | A1 | سؤال با is و are
+Is he your brother? | آیا او برادر توست؟
+Are they students? | آیا آن‌ها دانشجو هستند؟
+Is it hot today? | آیا امروز هوا گرم است؟
+Is she at work? | آیا او سر کار است؟
+Are you hungry? | گرسنه‌ای؟
+Is this your bag? | این کیف توست؟
+Are we late? | دیر کرده‌ایم؟
+Is the store open? | مغازه باز است؟
+Are you ready? | آماده‌ای؟
+Is your mother at home? | مادرت خانه است؟
+Who is that man? | آن مرد کیست؟
+Where is the bathroom? | دستشویی کجاست؟
+>> Are you ready? We are late! | آماده‌ای؟ دیر کرده‌ایم!
+>> Is this your bag? Yes, it is. | این کیف توست؟ بله، هست.
+>> Is the store open? No, it is not. | مغازه باز است؟ نه، نیست.
+>> Is your mother at home? Yes, she is. | مادرت خانه است؟ بله، هست.
+>> Are you hungry? Yes, I am very hungry. | گرسنه‌ای؟ بله، خیلی گرسنه‌ام.
+>> Where is the kitchen? It is over there. | آشپزخانه کجاست؟ آن‌جاست.
+
+## 4 | A1 | منفی با not: isn't و aren't
+I am not hungry. | من گرسنه نیستم.
+He isn't at home. | او خانه نیست.
+They aren't my friends. | آن‌ها دوستان من نیستند.
+It isn't expensive. | گران نیست.
+We aren't busy now. | ما الان سرمان شلوغ نیست.
+She isn't a nurse. | او پرستار نیست.
+The room isn't clean. | اتاق تمیز نیست.
+You aren't late. | تو دیر نکرده‌ای.
+My car isn't new. | ماشین من نو نیست.
+This isn't my phone. | این گوشی من نیست.
+The coffee isn't hot. | قهوه داغ نیست.
+I'm not from Canada. | من اهل کانادا نیستم.
+>> My name is Lisa. I'm not from Canada. | اسم من لیسا است. اهل کانادا نیستم.
+>> I'm from Chicago. | اهل شیکاگو هستم.
+>> My apartment is small, but it isn't expensive. | آپارتمانم کوچک است، اما گران نیست.
+>> My car isn't new, but it is good. | ماشینم نو نیست، اما خوب است.
+>> Today I'm not busy. | امروز سرم شلوغ نیست.
+>> My friends aren't busy now, and we are happy. | دوستانم الان کاری ندارند و ما خوشحالیم.
+
+## 5 | A1 | a و an
+I have a car. | من یک ماشین دارم.
+She has an apple. | او یک سیب دارد.
+He is an engineer. | او مهندس است.
+It is an old house. | آن یک خانه قدیمی است.
+This is a good idea. | این فکر خوبی است.
+I need an umbrella. | من یک چتر لازم دارم.
+She is an artist. | او هنرمند است.
+We have a big garden. | ما یک باغچه بزرگ داریم.
+I want an orange. | من یک پرتقال می‌خواهم.
+He is a nice guy. | او پسر خوبی است.
+It takes an hour. | یک ساعت طول می‌کشد.
+That is an interesting book. | آن کتاب جالبی است.
+>> I live in an old house. | من در یک خانه قدیمی زندگی می‌کنم.
+>> We have a big garden. | ما یک باغچه بزرگ داریم.
+>> My brother is an engineer. | برادرم مهندس است.
+>> My sister is an artist. | خواهرم هنرمند است.
+>> Every morning I eat an apple and an orange. | هر صبح یک سیب و یک پرتقال می‌خورم.
+>> It is a good idea! | فکر خوبی است!
+
+## 6 | A1 | این و آن: this و that
+This is my house. | این خانه من است.
+That is your car. | آن ماشین توست.
+These are my keys. | این‌ها کلیدهای من هستند.
+Those are her shoes. | آن‌ها کفش‌های او هستند.
+This coffee is good. | این قهوه خوب است.
+That man is my uncle. | آن مرد عموی من است.
+These apples are fresh. | این سیب‌ها تازه هستند.
+Those houses are beautiful. | آن خانه‌ها زیبا هستند.
+Is this seat free? | این صندلی خالی است؟
+What is that? | آن چیست؟
+I like this song. | این آهنگ را دوست دارم.
+Who are those people? | آن آدم‌ها چه کسانی هستند؟
+>> This is my street. | این خیابان من است.
+>> That is my house, and this is my car. | آن خانه من است و این ماشین من است.
+>> Those people are my neighbors. | آن آدم‌ها همسایه‌های من هستند.
+>> These apples are from our garden. | این سیب‌ها از باغچه ما هستند.
+>> They are fresh and sweet. | تازه و شیرین هستند.
+>> I like this street very much. | این خیابان را خیلی دوست دارم.

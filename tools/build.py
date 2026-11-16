@@ -9,6 +9,8 @@ Content format (one file per level, lessons in order):
   !! <optional Persian recap for the end screen>
 """
 import json, os, re, sys, unicodedata, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import fa_pron
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ZW = "\u200c"
@@ -107,7 +109,11 @@ def main():
         out = []
         for tok in text.split(" "):
             c = word_core(tok)
-            p = PRON.get(c.lower())
+            p = PRON.get(c.lower().replace("’", "'"))
+            if p is None:
+                p = fa_pron.word(c)
+                if p is not None:
+                    PRON[c.lower()] = p
             if p is None:
                 errors.append(f"no pron for {c!r} in {text!r}")
                 p = c
@@ -120,6 +126,10 @@ def main():
     for f in files:
         lessons += parse(f, errors)
     lessons.sort(key=lambda l: l["id"])
+    if "--max-level" in sys.argv:
+        order = ["A1", "A2", "B1", "B2", "C1", "C2"]
+        cap = order.index(sys.argv[sys.argv.index("--max-level") + 1])
+        lessons = [l for l in lessons if order.index(l["level"]) <= cap]
     ids = [l["id"] for l in lessons]
     if ids != list(range(1, len(ids) + 1)):
         errors.append(f"lesson ids not sequential: {ids[:5]}...")
@@ -167,6 +177,10 @@ def main():
         print(f"ok (dry): {len(lessons)} lessons")
         return
     os.makedirs(os.path.join(ROOT, "data", "lessons"), exist_ok=True)
+    keep = {f"{l['id']:03d}.json" for l in lessons}
+    for f in os.listdir(os.path.join(ROOT, "data", "lessons")):
+        if f not in keep:
+            os.remove(os.path.join(ROOT, "data", "lessons", f))
     course = {"levels": []}
     for l in lessons:
         out = {k: l[k] for k in ("id", "level", "titleFa", "sentences", "reading", "pron")}

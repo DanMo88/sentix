@@ -1,0 +1,99 @@
+## 7 | A1 | خانواده
+I have two sisters. | من دو خواهر دارم.
+My mother is a cook. | مادر من آشپز است.
+My father works in a bank. | پدرم در بانک کار می‌کند.
+My brother is ten years old. | برادرم ده سالش است.
+My grandmother lives with us. | مادربزرگم با ما زندگی می‌کند.
+My aunt has three children. | خاله‌ام سه بچه دارد.
+My cousin is a student too. | پسرخاله‌ام هم دانشجوست.
+My parents are very nice. | پدر و مادرم خیلی خوب هستند.
+I love my family. | خانواده‌ام را دوست دارم.
+My uncle lives in Boston. | عمویم در بوستون زندگی می‌کند.
+Our son is a baby. | پسر ما نوزاد است.
+Her husband is a pilot. | شوهر او خلبان است.
+>> I have a big family. | من خانواده بزرگی دارم.
+>> My father works in a bank, and my mother is a cook. | پدرم در بانک کار می‌کند و مادرم آشپز است.
+>> I have two sisters and one brother. | دو خواهر و یک برادر دارم.
+>> My brother is ten years old. | برادرم ده سالش است.
+>> My grandmother lives with us. She is very kind. | مادربزرگم با ما زندگی می‌کند. او خیلی مهربان است.
+>> I love my family. | خانواده‌ام را دوست دارم.
+
+## 8 | A1 | مال من، مال تو: my، your، his، her
+His name is David. | اسم او دیوید است.
+Her eyes are blue. | چشم‌های او آبی است.
+Your phone is on the table. | گوشی‌ات روی میز است.
+Our teacher is from Texas. | معلم ما اهل تگزاس است.
+Their house is very big. | خانه آن‌ها خیلی بزرگ است.
+Is this your jacket? | این کاپشن توست؟
+My bike is red. | دوچرخه من قرمز است.
+Its color is green. | رنگش سبز است.
+His sister is a singer. | خواهر او خواننده است.
+Where is your office? | دفترت کجاست؟
+Her son is very smart. | پسر او خیلی باهوش است.
+Our kitchen is small. | آشپزخانه ما کوچک است.
+>> This is my friend Anna. | این دوستم آنا است.
+>> Her eyes are blue, and her hair is long. | چشم‌هایش آبی و موهایش بلند است.
+>> Her brother's name is David. | اسم برادرش دیوید است.
+>> His car is old, but his bike is new. | ماشینش قدیمی است، اما دوچرخه‌اش نو است.
+>> Their house is very big. | خانه آن‌ها خیلی بزرگ است.
+>> Our house is small, but it is warm. | خانه ما کوچک است، اما گرم است.
+
+## 9 | A1 | عددها و سن
+I am twenty years old. | من بیست سالم است.
+How old are you? | چند سالت است؟
+She is thirty-five. | او سی‌وپنج ساله است.
+I have three cats. | من سه گربه دارم.
+My son is six. | پسرم شش ساله است.
+There are twelve months in a year. | یک سال دوازده ماه دارد.
+We have four rooms. | ما چهار اتاق داریم.
+He is fifty years old. | او پنجاه سال دارد.
+My phone number is easy. | شماره تلفنم آسان است.
+I need seven eggs. | من هفت تخم‌مرغ لازم دارم.
+The class has eighteen students. | کلاس هجده دانشجو دارد.
+My grandfather is ninety. | پدربزرگم نود ساله است.
+>> My name is Mike. I am twenty years old. | اسم من مایک است. بیست سالم است.
+>> My sister is fifteen, and my brother is nine. | خواهرم پانزده و برادرم نُه ساله است.
+>> My father is fifty years old. | پدرم پنجاه سال دارد.
+>> My grandfather is ninety. | پدربزرگم نود ساله است.
+>> We have four rooms and three cats. | ما چهار اتاق و سه گربه داریم.
+>> How old are you? | تو چند سالت است؟
+
+## 10 | A1 | جمع بستن اسم‌ها
+I have two dogs. | من دو سگ دارم.
+The children are in the park. | بچه‌ها در پارک هستند.
+These boxes are heavy. | این جعبه‌ها سنگین هستند.
+My feet are cold. | پاهایم سرد است.
+The women are very friendly. | آن خانم‌ها خیلی خونگرم هستند.
+I need three glasses. | من سه لیوان لازم دارم.
+The men are at work. | مردها سر کار هستند.
+I see five birds. | پنج پرنده می‌بینم.
+Her teeth are white. | دندان‌هایش سفید است.
+We have many books. | ما کتاب‌های زیادی داریم.
+The cities are big. | شهرها بزرگ هستند.
+Two people are outside. | دو نفر بیرون هستند.
+>> Today we are in the park. | امروز در پارک هستیم.
+>> The children are happy. | بچه‌ها خوشحال هستند.
+>> Two dogs are on the grass. | دو سگ روی چمن هستند.
+>> I see five birds in a tree. | پنج پرنده روی یک درخت می‌بینم.
+>> The women are friendly, and the men are funny. | خانم‌ها خونگرم هستند و مردها بامزه.
+>> My feet are cold, but I am happy. | پاهایم سرد است، اما خوشحالم.
+
+## 11 | A1 | داشتن: have و has
+I have a question. | من یک سؤال دارم.
+She has a new job. | او یک کار جدید دارد.
+We have a meeting today. | ما امروز جلسه داریم.
+He has two cars. | او دو ماشین دارد.
+They have a beautiful home. | آن‌ها خانه زیبایی دارند.
+Do you have a pen? | خودکار داری؟
+My city has a big park. | شهر من یک پارک بزرگ دارد.
+I have a headache. | سرم درد می‌کند.
+She has long hair. | او موی بلند دارد.
+We have time. | ما وقت داریم.
+He has a cold. | او سرما خورده است.
+They have three kids. | آن‌ها سه بچه دارند.
+>> My friend Emma has a new job. | دوستم اِما یک کار جدید دارد.
+>> She has a nice office and a big desk. | او یک دفتر خوب و یک میز بزرگ دارد.
+>> Today she has a meeting. | امروز جلسه دارد.
+>> I have a headache, so I am at home. | سرم درد می‌کند، برای همین خانه هستم.
+>> We have time this evening. | امشب وقت داریم.
+>> Do you have time too? | تو هم وقت داری؟
