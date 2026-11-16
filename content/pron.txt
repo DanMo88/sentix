@@ -52,3 +52,7 @@ ali = عَلی
 close = کلوز
 resume = رِزِمِی
 los = لاس
+wind = ویند
+used = یوست
+withdraw = ویدرا
+atm = اِی‌تی‌اِم
