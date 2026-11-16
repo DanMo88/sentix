@@ -2,7 +2,7 @@
 """Generate missing MP3s from tools/tts_jobs.json with edge-tts (en-US-AriaNeural, -15%, American English).
 Usage: python3 tools/tts.py [--prefix audio/r-] [--workers 8]
 Re-generates a file when its text changed (tools/tts_manifest.json)."""
-import asyncio, json, os, sys
+import asyncio, json, os, subprocess, sys
 import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,3 +58,4 @@ async def main():
 
 
 asyncio.run(main())
+subprocess.run([sys.executable, os.path.join(ROOT, "tools", "trim.py")], check=True)

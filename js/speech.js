@@ -1,237 +1,139 @@
-/* American English: pre-generated en-US-AriaNeural MP3s at -15%.
-   Word taps stay instant by preloading/decoding clips for the current
-   (and next) sentence into a reusable Audio pool before the learner taps. */
+/* Sentix audio engine (v2): Web Audio only.
+   Every clip of the open lesson is fetched + decoded into an AudioBuffer up front.
+   Leading/trailing silence is trimmed in the files (tools/trim.py) and measured again
+   at decode time, so a tap starts a BufferSource at once — no <audio> src swapping. */
 (function () {
-  const listeners = new Set();
-  let support = "nl";
+  const AC = window.AudioContext || window.webkitAudioContext;
+  let ctx = null;
+  const bufs = new Map();
+  const pend = new Map();
+  let cur = null;
   let token = 0;
-  /** Shared fallback element when a clip is not yet in the pool. */
-  const au = new Audio();
-  au.preload = "auto";
-  /** @type {Map<string, {el: HTMLAudioElement, ready: boolean}>} */
-  const pool = new Map();
-  /** Soft lead-in on Azure TTS word clips (~0.2s). Skip a little once ready. */
-  const WORD_LEAD = 0.12;
-  let playing = null;
+  let safety = 0;
+  const stats = { lastStart: 0 };
 
-  /* Must match tools/build.py slug(). */
   function slug(text) {
     return String(text).trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
       .slice(0, 100).replace(/-+$/g, "");
   }
 
-  function srcFor(text) {
-    const raw = String(text).trim();
-    const kind = /[.?!]$/.test(raw) ? "s" : "w";
-    return "audio/" + kind + "-" + slug(raw) + ".mp3";
+  function ensure() {
+    if (!ctx && AC) {
+      try { ctx = new AC({ latencyHint: "interactive" }); } catch (e) { ctx = new AC(); }
+    }
+    return ctx;
   }
 
-  function isWordSrc(src) {
-    return /\/w-/.test(src) || /^audio\/w-/.test(src);
+  function unlock() {
+    const c = ensure();
+    if (!c) return;
+    if (c.state !== "running") c.resume().catch(() => {});
+    try {
+      const s = c.createBufferSource();
+      s.buffer = c.createBuffer(1, 1, 22050);
+      s.connect(c.destination);
+      s.start(0);
+    } catch (e) { /* ignore */ }
   }
 
-  function emit() {
-    listeners.forEach((fn) => fn(support));
+  function measure(buf) {
+    const d = buf.getChannelData(0);
+    const th = 0.01;
+    let a = 0;
+    while (a < d.length && Math.abs(d[a]) < th) a += 1;
+    let z = d.length - 1;
+    while (z > a && Math.abs(d[z]) < th) z -= 1;
+    const sr = buf.sampleRate;
+    const start = Math.max(0, a / sr - 0.008);
+    const end = Math.min(buf.duration, z / sr + 0.05);
+    return { buf, start, dur: Math.max(0.05, end - start) };
   }
 
-  function init() {
-    support = "nl";
-    emit();
+  function load(src) {
+    if (bufs.has(src)) return Promise.resolve(bufs.get(src));
+    if (pend.has(src)) return pend.get(src);
+    const c = ensure();
+    if (!c) return Promise.reject(new Error("no-webaudio"));
+    const p = fetch(src).then((r) => {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.arrayBuffer();
+    }).then((ab) => new Promise((res, rej) => c.decodeAudioData(ab, res, rej)))
+      .then((b) => { const t = measure(b); bufs.set(src, t); pend.delete(src); return t; })
+      .catch((e) => { pend.delete(src); throw e; });
+    pend.set(src, p);
+    return p;
   }
 
-  function watch(fn) {
-    listeners.add(fn);
-    fn(support);
-    return () => listeners.delete(fn);
-  }
-
-  function stopElement(el) {
-    if (!el) return;
-    try { el.pause(); } catch (error) { /* ignore */ }
-    try { el.currentTime = 0; } catch (error) { /* ignore */ }
-    el.onended = null;
-    el.onerror = null;
+  function preload(srcs) {
+    return Promise.allSettled(Array.from(new Set((srcs || []).filter(Boolean))).map(load));
   }
 
   function stop() {
     token += 1;
-    stopElement(playing);
-    playing = null;
-    stopElement(au);
-    au.removeAttribute("src");
-    try { au.load(); } catch (error) { /* ignore */ }
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      try { window.speechSynthesis.cancel(); } catch (error) { /* ignore */ }
+    clearTimeout(safety);
+    if (cur) {
+      try { cur.onended = null; cur.stop(); } catch (e) { /* ignore */ }
+      cur = null;
     }
+    if (window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ } }
   }
 
-  function ensureEntry(src) {
-    let entry = pool.get(src);
-    if (entry) return entry;
-    const el = new Audio();
-    el.preload = "auto";
-    el.src = src;
-    entry = { el, ready: false };
-    const mark = () => { entry.ready = true; };
-    el.addEventListener("canplaythrough", mark, { once: true });
-    el.addEventListener("loadeddata", mark, { once: true });
-    try { el.load(); } catch (error) { /* ignore */ }
-    /* Also warm the service-worker / HTTP cache. */
-    try { fetch(src, { credentials: "same-origin", cache: "force-cache" }).catch(() => {}); } catch (error) { /* ignore */ }
-    pool.set(src, entry);
-    return entry;
+  function fallback(text, my, done) {
+    if (!("speechSynthesis" in window)) { setTimeout(done, 600); return; }
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US";
+    u.rate = 0.85;
+    let fired = false;
+    const end = () => { if (fired || my !== token) return; fired = true; done(); };
+    u.onend = end;
+    u.onerror = end;
+    setTimeout(end, 900 + text.length * 90);
+    try { window.speechSynthesis.speak(u); } catch (e) { end(); }
   }
 
-  function preload(srcs) {
-    const list = Array.from(new Set((srcs || []).filter(Boolean)));
-    list.forEach((src) => ensureEntry(src));
-    return list;
-  }
-
-  function leadFor(src) {
-    if (!isWordSrc(src)) return 0;
-    return WORD_LEAD;
-  }
-
-  function fallbackSpeak(texts, hooks, startAt, my) {
-    const done = hooks || {};
-    if (!(typeof window !== "undefined" && "speechSynthesis" in window)) {
-      done.onError?.("unsupported");
-      return;
-    }
-    const synth = window.speechSynthesis;
-    try { synth.cancel(); } catch (error) { /* ignore */ }
-    texts.slice(startAt).forEach((text, offset) => {
-      const index = startAt + offset;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "en-US";
-      utterance.rate = 0.75;
-      utterance.onstart = () => {
-        if (my !== token) return;
-        done.onStart?.(index);
-      };
-      utterance.onend = () => {
-        if (my !== token) return;
-        if (index === texts.length - 1) done.onEnd?.();
-      };
-      utterance.onerror = (event) => {
-        if (my !== token) return;
-        const reason = event.error || "error";
-        if (reason === "canceled" || reason === "interrupted") return;
-        done.onError?.(reason);
-      };
-      synth.speak(utterance);
-    });
-  }
-
-  function pickPlayer(src) {
-    const entry = pool.get(src);
-    if (entry && entry.ready) return entry.el;
-    if (entry) return entry.el;
-    return null;
-  }
-
-  function speak(texts, hooks) {
-    const done = hooks || {};
-    const items = (texts || []).map((item) => (typeof item === "object" && item
-      ? { text: String(item.text), src: item.src || srcFor(item.text) }
-      : { text: String(item), src: srcFor(item) }));
-    const list = items.map((item) => item.text);
-    if (!list.length) {
-      done.onEnd?.();
-      return;
-    }
-    preload(items.map((item) => item.src));
-    const my = ++token;
-    stopElement(playing);
-    playing = null;
-    try { au.pause(); } catch (error) { /* ignore */ }
+  /* items: [{src, text}] played back to back. hooks: onStart(i), onEnd() */
+  function speak(items, hooks) {
+    const h = hooks || {};
+    stop();
+    const my = token;
+    const c = ensure();
+    if (c && c.state !== "running") c.resume().catch(() => {});
     let i = 0;
-
     const step = () => {
       if (my !== token) return;
-      if (i >= list.length) {
-        playing = null;
-        done.onEnd?.();
-        return;
-      }
-      const index = i;
-      const src = items[index].src;
-      done.onStart?.(index);
-
-      const pooled = pickPlayer(src);
-      const el = pooled || au;
-      playing = el;
-
-      el.onended = () => {
+      if (i >= items.length) { h.onEnd && h.onEnd(); return; }
+      const it = items[i];
+      const next = () => { if (my !== token) return; clearTimeout(safety); cur = null; i += 1; step(); };
+      const go = (t) => {
         if (my !== token) return;
-        i += 1;
-        step();
+        h.onStart && h.onStart(i);
+        const s = c.createBufferSource();
+        s.buffer = t.buf;
+        s.connect(c.destination);
+        s.onended = next;
+        cur = s;
+        s.start(0, t.start, t.dur);
+        stats.lastStart = performance.now();
+        /* If the context is suspended (no gesture yet) onended never fires: keep the flow moving. */
+        clearTimeout(safety);
+        safety = setTimeout(next, t.dur * 1000 + 700);
       };
-      el.onerror = () => {
-        if (my !== token) return;
-        playing = null;
-        fallbackSpeak(list, done, index, my);
-      };
-
-      const absolute = (() => {
-        try { return new URL(src, location.href).href; } catch (error) { return src; }
-      })();
-      if (el === au || (el.src && el.src !== absolute)) {
-        el.src = src;
-      }
-
-      let started = false;
-      const start = () => {
-        if (my !== token || started) return;
-        started = true;
-        try {
-          const lead = leadFor(src);
-          if (lead > 0 && el.readyState >= 1 && Number.isFinite(el.duration) && el.duration > lead + 0.2) {
-            el.currentTime = lead;
-          } else {
-            el.currentTime = 0;
-          }
-        } catch (error) {
-          try { el.currentTime = 0; } catch (err) { /* ignore */ }
-        }
-        el.playbackRate = 1;
-        const play = el.play();
-        if (play && play.catch) {
-          play.catch(() => {
-            if (my !== token) return;
-            done.onError?.("not-allowed");
-          });
-        }
-      };
-
-      if (el.readyState >= 2) {
-        start();
-      } else {
-        const onReady = () => start();
-        el.addEventListener("canplaythrough", onReady, { once: true });
-        el.addEventListener("loadeddata", onReady, { once: true });
-        try { el.load(); } catch (error) { /* ignore */ }
-        setTimeout(onReady, 120);
-      }
+      const ready = bufs.get(it.src);
+      if (ready && c) { go(ready); return; }
+      load(it.src).then(go).catch(() => { h.onStart && h.onStart(i); fallback(it.text, my, next); });
     };
-
     step();
   }
 
-  window.DutchSpeech = {
-    RATE: 0.85,
-    init,
-    slug,
-    srcFor,
-    speak,
-    stop,
-    preload,
-    watch,
-    chooseVoice: function () { return { name: "en-US-AriaNeural" }; },
-    get support() {
-      return support;
-    },
+  function duration(src) {
+    const t = bufs.get(src);
+    return t ? t.dur : 0;
+  }
+
+  window.SfAudio = {
+    slug, unlock, preload, load, speak, stop, duration, stats,
+    get ctx() { return ctx; },
+    isReady(src) { return bufs.has(src); },
   };
 })();

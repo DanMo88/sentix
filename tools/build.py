@@ -136,8 +136,6 @@ def main():
         if len(l["reading"]) < 3:
             errors.append(f"{where}: reading has {len(l['reading'])} lines")
         for s in l["sentences"]:
-            if not s["notes"]:
-                errors.append(f"{where}: no note for {s['nl']}")
             key = s["nl"].lower()
             if key in seen_sent:
                 warns.append(f"{where}: repeats sentence from lesson {seen_sent[key]}: {s['nl']}")
@@ -154,10 +152,12 @@ def main():
                 c = word_core(tok)
                 if c and c.lower() in PRON:
                     l["pron"][c.lower()] = PRON[c.lower()]
-        for r in l["reading"]:
+        for i, r in enumerate(l["reading"], 1):
             r["pr"] = pr_line(r["nl"])
-        l["readingAudio"] = f"audio/r-{l['id']:03d}.mp3"
-        job(l["readingAudio"], " ".join(r["nl"] for r in l["reading"]))
+            r["audio"] = f"audio/rl-{l['id']:03d}-{i}.mp3"
+            job(r["audio"], r["nl"])
+        for s in l["sentences"]:
+            s.pop("notes", None)
     if errors:
         print("\n".join("ERROR " + e for e in errors))
         sys.exit(1)
@@ -169,7 +169,7 @@ def main():
     os.makedirs(os.path.join(ROOT, "data", "lessons"), exist_ok=True)
     course = {"levels": []}
     for l in lessons:
-        out = {k: l[k] for k in ("id", "level", "titleFa", "sentences", "reading", "readingAudio", "recap", "pron")}
+        out = {k: l[k] for k in ("id", "level", "titleFa", "sentences", "reading", "pron")}
         with open(os.path.join(ROOT, "data", "lessons", f"{l['id']:03d}.json"), "w", encoding="utf-8") as fh:
             json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
         if not course["levels"] or course["levels"][-1]["id"] != l["level"]:

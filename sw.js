@@ -1,16 +1,16 @@
 // HTML/JSON: network-first · css/js/manifest: stale-while-revalidate
 // media (audio/img/fonts/icons): cache-on-demand · cross-origin: never touched
-const V = 'sf-v1';
+const V = 'sf-v2';
 const SHELL = [
   './', 'index.html',
-  'css/styles.css?v=1', 'js/app.js?v=1', 'js/speech.js?v=1', 'js/install.js?v=1',
-  'manifest.webmanifest', 'data/course.json?v=1',
+  'css/styles.css?v=2', 'js/app.js?v=2', 'js/speech.js?v=2', 'js/install.js?v=2',
+  'manifest.webmanifest', 'data/course.json?v=2',
   'fonts/Vazirmatn-Regular.woff2', 'fonts/Vazirmatn-Bold.woff2', 'fonts/Vazirmatn-Black.woff2',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png',
   'images/shir-o-khorshid.svg', 'images/us.svg', 'favicon.svg'
 ];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
-self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('sf-') && k !== V && k !== 'sf-media').map(k => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('sf-') && k !== V && k !== 'sf-media-v2').map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 async function ranged(req, res) {
   const range = req.headers.get('range'); if (!range || !res || res.status !== 200) return res;
   const buf = await res.arrayBuffer(); const m = /bytes=(\d*)-(\d*)/.exec(range);
@@ -26,7 +26,7 @@ self.addEventListener('fetch', e => {
       let res = await caches.match(key);
       if (!res) {
         const r = await fetch(key);
-        if (r.ok) { const c = await caches.open(/\/(fonts|icons)\//.test(url.pathname) || url.pathname.endsWith('favicon.svg') ? V : 'sf-media'); await c.put(key, r.clone()); }
+        if (r.ok) { const c = await caches.open(/\/(fonts|icons)\//.test(url.pathname) || url.pathname.endsWith('favicon.svg') ? V : 'sf-media-v2'); await c.put(key, r.clone()); }
         res = r;
       }
       return ranged(req, res);

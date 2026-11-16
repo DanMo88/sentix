@@ -1,4 +1,4 @@
-# Sentencify
+# Sentix
 
 A phone-first American English sentence builder for Persian speakers, from A1 to C2. Same engine as Zinsmaken (DanMo88/dutch-sentences). Interface in Persian (RTL); English stays LTR. Every word tile shows a Persian-letter American reading (water → «وادِر»), and every sentence and reading line shows a full Persian-letter reading.
 
@@ -9,7 +9,7 @@ A phone-first American English sentence builder for Persian speakers, from A1 to
 3. After two wrong tries «کمک گرفتن» shows the correct sentence with meaning and reading; after a helped solve the same sentence restarts and only an unaided solve moves on.
 4. After the last sentence, a short English reading text with reading + Persian translation and slow audio.
 
-Progress is stored only in the browser (`localStorage`, key `sentencify-progress-v1`). No accounts, no analytics.
+Progress is stored only in the browser (`localStorage`, key `sentix-progress-v1`). No accounts, no analytics.
 
 ## Content
 
