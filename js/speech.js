@@ -118,13 +118,15 @@
         const entry = { src: it.src, start: performance.now(), end: 0 };
         if (stats.log.length > 60) stats.log.shift();
         stats.log.push(entry);
-        s.onended = () => { entry.end = performance.now(); next(); };
+        let finished = false;
+        const finish = () => { if (finished) return; finished = true; entry.end = entry.end || performance.now(); next(); };
+        s.onended = () => { entry.end = performance.now(); finish(); };
         cur = s;
         s.start(0, t.start, t.dur);
         stats.lastStart = performance.now();
         /* If the context is suspended (no gesture yet) onended never fires: keep the flow moving. */
         clearTimeout(safety);
-        safety = setTimeout(next, t.dur * 1000 + 700);
+        safety = setTimeout(() => { try { s.onended = null; s.stop(); } catch (e) { /* ignore */ } finish(); }, t.dur * 1000 + 1500);
       };
       const ready = bufs.get(it.src);
       if (ready && c) { go(ready); return; }
