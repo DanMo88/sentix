@@ -10,7 +10,7 @@
   let cur = null;
   let token = 0;
   let safety = 0;
-  const stats = { lastStart: 0 };
+  const stats = { lastStart: 0, log: [] };
 
   function slug(text) {
     return String(text).trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -92,7 +92,7 @@
     try { window.speechSynthesis.speak(u); } catch (e) { end(); }
   }
 
-  /* items: [{src, text}] played back to back. hooks: onStart(i), onEnd() */
+  /* items: [{src, text}] played in order. hooks: onStart(i), onEnd(), gap (ms between items) */
   function speak(items, hooks) {
     const h = hooks || {};
     stop();
@@ -104,14 +104,21 @@
       if (my !== token) return;
       if (i >= items.length) { h.onEnd && h.onEnd(); return; }
       const it = items[i];
-      const next = () => { if (my !== token) return; clearTimeout(safety); cur = null; i += 1; step(); };
+      const next = () => {
+        if (my !== token) return;
+        clearTimeout(safety); cur = null; i += 1;
+        if (h.gap && i < items.length) safety = setTimeout(step, h.gap); else step();
+      };
       const go = (t) => {
         if (my !== token) return;
         h.onStart && h.onStart(i);
         const s = c.createBufferSource();
         s.buffer = t.buf;
         s.connect(c.destination);
-        s.onended = next;
+        const entry = { src: it.src, start: performance.now(), end: 0 };
+        if (stats.log.length > 60) stats.log.shift();
+        stats.log.push(entry);
+        s.onended = () => { entry.end = performance.now(); next(); };
         cur = s;
         s.start(0, t.start, t.dur);
         stats.lastStart = performance.now();

@@ -16,7 +16,10 @@
     C1: "زبان رسمی، دانشگاهی و حرفه" + Z + "ای",
     C2: "ظرافت" + Z + "ها، اصطلاحات و لحن مثل یک آمریکایی",
   };
-  const ADVANCE_GAP = 350; /* ms after the sentence audio ends */
+  const WORD_TO_SENTENCE = 1000; /* ms after the last word's audio ends */
+  const ADVANCE_GAP = 2000;      /* ms after the sentence audio ends */
+  const READING_GAP = 1000;      /* ms between reading lines */
+  let flow = 0;                  /* cancels pending automatic steps */
 
   const state = {
     screen: "home", course: null, lesson: null, lessonId: 1, level: "A1",
@@ -269,8 +272,8 @@
     const complete = state.placed.length === words.length;
     const correct = complete && state.placed.map((x) => tileById(x).text).join(" ") === words.join(" ");
     if (correct && state.helpMode) {
-      /* Helped solve: hear it, then build the same sentence again without help. */
-      A.speak([{ src: sentSrc(s), text: s.nl }]);
+      /* Helped solve: word, 1 s, sentence — then build the same sentence again without help. */
+      sentenceChain(id, s, null);
       deal();
       state.flash = "آفرین. حالا همین جمله را بدون کمک دوباره بساز.";
       render();
@@ -281,12 +284,8 @@
       state.wrongCount = 0;
       if (state.index >= state.lesson.sentences.length - 1) markDone(state.lesson.id);
       else rememberAt(state.lesson.id, state.index + 1);
-      /* Play the sentence first (zero gap), render right after. */
-      A.speak([{ src: sentSrc(s), text: s.nl }], { onEnd: scheduleAdvance });
       render();
-      const bar = app.querySelector(".r-bar i");
-      const d = A.duration(sentSrc(s));
-      if (bar && d) { bar.style.transitionDuration = d + "s"; requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = "100%"; })); }
+      sentenceChain(id, s, scheduleAdvance);
       return;
     }
     sayWord(id);
@@ -301,6 +300,24 @@
     state.status = "building";
     state.popId = id;
     render();
+  }
+  /* Last word plays → 1 s → full sentence plays → (then) callback. */
+  function sentenceChain(id, s, then) {
+    const my = ++flow;
+    const t = tileById(id);
+    clearTimeout(advanceTimer);
+    const playSentence = () => {
+      if (my !== flow) return;
+      const bar = app.querySelector(".r-bar i");
+      const d = A.duration(sentSrc(s));
+      if (bar && d) { bar.style.transitionDuration = d + "s"; requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = "100%"; })); }
+      const ind = app.querySelector(".result");
+      if (ind) ind.classList.add("playing");
+      A.speak([{ src: sentSrc(s), text: s.nl }], { onEnd: () => { if (my === flow && then) then(); } });
+    };
+    A.speak([{ src: wordSrc(t.text), text: core(t.text) }], {
+      onEnd: () => { if (my !== flow) return; advanceTimer = setTimeout(playSentence, WORD_TO_SENTENCE); },
+    });
   }
   function scheduleAdvance() {
     clearTimeout(advanceTimer);
@@ -332,6 +349,7 @@
     state.readingPlaying = true;
     const items = L.reading.map((r) => ({ src: r.audio, text: r.nl }));
     A.speak(items, {
+      gap: READING_GAP,
       onStart(i) { state.readingLine = i; highlight(); },
       onEnd() { state.readingPlaying = false; state.readingLine = -1; if (state.screen === "done") render(); },
     });
@@ -360,6 +378,7 @@
     return out;
   }
   function openLesson(id, fromStart) {
+    flow += 1;
     const meta = lessonMeta(id);
     if (!meta || meta.locked) return;
     A.stop(); clearTimeout(advanceTimer);
@@ -382,6 +401,7 @@
     }).catch(() => { state.loadError = "درس باز نشد. اینترنت را بررسی کن و دوباره امتحان کن."; render(); });
   }
   function goHome() {
+    flow += 1;
     A.stop(); clearTimeout(advanceTimer);
     state.screen = "home";
     state.readingPlaying = false;
@@ -394,7 +414,7 @@
     const a = btn.dataset.action;
     if (a === "add") addTile(btn.dataset.id);
     else if (a === "remove") removeTile(btn.dataset.id);
-    else if (a === "noop") sayWord(btn.dataset.id);
+    else if (a === "noop" && state.status !== "correct") sayWord(btn.dataset.id);
   }
   app.addEventListener("pointerdown", (e) => {
     window.__sfTapT = performance.now();

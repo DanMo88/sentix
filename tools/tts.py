@@ -7,6 +7,16 @@ import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VOICE, RATE = "en-US-AriaNeural", "-15%"
+READING_RATE = "-30%"  # end-of-lesson reading lines: slow, deliberate, clear
+
+
+def rate_for(fname):
+    return READING_RATE if os.path.basename(fname).startswith("rl-") else RATE
+
+
+def sig(fname, text):
+    r = rate_for(fname)
+    return text if r == RATE else f"{r}|{text}"
 
 
 async def one(sem, fname, text, manifest, stats):
@@ -15,11 +25,11 @@ async def one(sem, fname, text, manifest, stats):
         for attempt in range(5):
             try:
                 tmp = path + ".part"
-                await edge_tts.Communicate(text, VOICE, rate=RATE).save(tmp)
+                await edge_tts.Communicate(text, VOICE, rate=rate_for(fname)).save(tmp)
                 if os.path.getsize(tmp) < 1000:
                     raise RuntimeError("tiny file")
                 os.replace(tmp, path)
-                manifest[fname] = text
+                manifest[fname] = sig(fname, text)
                 stats["ok"] += 1
                 return
             except Exception as e:
@@ -39,8 +49,8 @@ async def main():
         if not fname.startswith(prefix):
             continue
         path = os.path.join(ROOT, fname)
-        if os.path.exists(path) and manifest.get(fname, text) == text:
-            manifest.setdefault(fname, text)
+        if os.path.exists(path) and manifest.get(fname, sig(fname, text)) == sig(fname, text):
+            manifest.setdefault(fname, sig(fname, text))
             continue
         todo.append((fname, text))
     print(f"{len(todo)} to generate", flush=True)
