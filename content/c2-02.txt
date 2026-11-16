@@ -1,0 +1,99 @@
+## 128 | C2 | زبان پزشکی
+The patient was admitted with severe chest pain. | بیمار با درد شدید قفسه سینه بستری شد.
+Her blood pressure is dangerously high. | فشار خونش به‌طرز خطرناکی بالاست.
+The doctor ordered a series of blood tests. | دکتر یک سری آزمایش خون تجویز کرد.
+He's been diagnosed with type two diabetes. | دیابت نوع دو در او تشخیص داده شده است.
+Take one tablet twice a day with food. | روزی دو بار یک قرص همراه غذا بخورید.
+The symptoms include fever and a dry cough. | علائم شامل تب و سرفه خشک است.
+The surgery was a complete success. | جراحی کاملاً موفق بود.
+She's allergic to penicillin. | به پنی‌سیلین حساسیت دارد.
+The wound became infected and needed antibiotics. | زخم عفونت کرد و به آنتی‌بیوتیک نیاز داشت.
+Early detection greatly improves the chances of recovery. | تشخیص زودهنگام شانس بهبود را بسیار بالا می‌برد.
+The side effects are usually mild. | عوارض جانبی معمولاً خفیف‌اند.
+He's in stable condition after the operation. | پس از عمل در وضعیت پایداری است.
+>> Last month, my father felt a sharp pain in his chest. | ماه پیش پدرم درد تیزی در سینه‌اش حس کرد.
+>> We rushed him to the emergency room. | سریع او را به اورژانس رساندیم.
+>> The doctors ran several tests and found a blocked artery. | پزشکان چند آزمایش گرفتند و یک رگ بسته پیدا کردند.
+>> He had a minor procedure the same evening. | همان شب یک عمل جزئی انجام داد.
+>> Thanks to early detection, he made a full recovery. | به لطف تشخیص زودهنگام، کاملاً بهبود یافت.
+>> Now he exercises every day and watches his diet. | حالا هر روز ورزش می‌کند و مراقب رژیم غذایی‌اش است.
+
+## 129 | C2 | تیتر خبر و زبان رسانه
+Senate passes landmark climate bill. | سنا لایحه تاریخی اقلیمی را تصویب کرد.
+Stocks plunge amid recession fears. | سهام در بحبوحه ترس از رکود سقوط کرد.
+Mayor vows to crack down on crime. | شهردار قول برخورد قاطع با جرم را داد.
+Tech giant faces record fine. | غول فناوری با جریمه‌ای بی‌سابقه روبه‌رو است.
+Storm leaves thousands without power. | طوفان هزاران نفر را بی‌برق گذاشت.
+President slams critics over new policy. | رئیس‌جمهور منتقدان سیاست جدید را به باد انتقاد گرفت.
+Talks collapse as deadline looms. | با نزدیک شدن مهلت، مذاکرات شکست خورد.
+Local hero saves child from fire. | قهرمان محلی کودکی را از آتش نجات داد.
+Officials probe cause of bridge collapse. | مقامات علت فرو ریختن پل را بررسی می‌کنند.
+Unemployment hits record low. | بیکاری به پایین‌ترین حد خود رسید.
+Scientists hail breakthrough in cancer research. | دانشمندان از دستاورد تازه در پژوهش سرطان استقبال کردند.
+Rescue efforts continue after deadly quake. | تلاش‌های امداد پس از زلزله مرگبار ادامه دارد.
+>> Headlines use a special kind of English. | تیترها نوع خاصی از انگلیسی را به کار می‌برند.
+>> They often drop small words like "the" and "is." | اغلب واژه‌های کوچکی مثل «the» و «is» را حذف می‌کنند.
+>> The present tense is used even for past events. | زمان حال حتی برای رویدادهای گذشته به کار می‌رود.
+>> Short, dramatic verbs like "slam," "vow," and "probe" are common. | فعل‌های کوتاه و پرهیجانی مثل «slam» و «vow» و «probe» رایج‌اند.
+>> "Mayor vows to cut taxes" means the mayor has promised to cut taxes. | «Mayor vows to cut taxes» یعنی شهردار قول داده مالیات‌ها را کم کند.
+>> Once you know the code, the news becomes much easier to scan. | وقتی رمزش را بدانی، مرور اخبار خیلی آسان‌تر می‌شود.
+
+## 130 | C2 | بازی با کلمات
+I used to be a banker, but I lost interest. | قبلاً بانکدار بودم، اما «علاقه/بهره»‌ام را از دست دادم.
+Time flies like an arrow; fruit flies like a banana. | زمان مثل تیر می‌پرد؛ مگس‌های میوه موز دوست دارند.
+I'm reading a book about gravity, and I can't put it down. | کتابی درباره جاذبه می‌خوانم و نمی‌توانم زمینش بگذارم.
+The math teacher had too many problems. | معلم ریاضی «مسئله»‌های زیادی داشت.
+I wondered why the ball was getting bigger, and then it hit me. | تعجب کردم چرا توپ بزرگ‌تر می‌شود، بعد «فهمیدم/خورد به من».
+A bicycle can't stand on its own because it's two-tired. | دوچرخه نمی‌تواند خودش بایستد چون «دو چرخه/خیلی خسته» است.
+I don't trust stairs, because they're always up to something. | به پله‌ها اعتماد ندارم، چون همیشه «بالا می‌روند/نقشه‌ای دارند».
+The baker quit because he couldn't make enough dough. | نانوا استعفا داد چون نمی‌توانست به اندازه کافی «خمیر/پول» دربیاورد.
+I'm on a seafood diet: I see food and eat it. | رژیم «غذای دریایی» دارم: غذا را «می‌بینم» و می‌خورمش.
+The dog stayed in the shade; he didn't want to be a hot dog. | سگ در سایه ماند؛ نمی‌خواست «هات‌داگ» شود.
+Did you hear about the restaurant on the moon? | درباره رستوران روی ماه شنیده‌ای؟
+Great food, but no atmosphere. | غذای عالی، اما بی «اتمسفر/حال‌وهوا».
+>> Americans love puns, which are jokes based on words with two meanings. | آمریکایی‌ها عاشق جناس‌اند، یعنی شوخی‌هایی بر پایه واژه‌های دومعنایی.
+>> When someone tells a bad pun, people often groan instead of laughing. | وقتی کسی جناس بدی می‌گوید، مردم اغلب به‌جای خنده ناله می‌کنند.
+>> These are sometimes called "dad jokes." | به این‌ها گاهی «شوخی‌های بابایی» می‌گویند.
+>> Understanding puns shows that you really know the language. | فهمیدن جناس نشان می‌دهد واقعاً زبان را بلدی.
+>> Making your own puns is even harder. | ساختن جناس خودت از آن هم سخت‌تر است.
+>> But once you can do it, you've truly mastered English. | اما وقتی بتوانی، واقعاً بر انگلیسی مسلط شده‌ای.
+
+## 131 | C2 | لحن و نگاه نویسنده
+The author's tone is deeply ironic. | لحن نویسنده عمیقاً طعنه‌آمیز است.
+The writer clearly sympathizes with the workers. | نویسنده آشکارا با کارگران همدلی می‌کند.
+The article is biased in favor of the government. | مقاله به نفع دولت جانب‌دارانه است.
+Her tone shifts from hopeful to bitter. | لحنش از امیدوار به تلخ تغییر می‌کند.
+The narrator cannot be fully trusted. | به راوی نمی‌توان کاملاً اعتماد کرد.
+The essay adopts a deliberately neutral stance. | مقاله عمداً موضعی بی‌طرف می‌گیرد.
+Between the lines, there's a hint of criticism. | میان سطرها ردی از انتقاد هست.
+The language is formal yet surprisingly warm. | زبان رسمی است، اما به‌طرز غافلگیرکننده‌ای گرم.
+The author implies more than he states. | نویسنده بیش از آن‌چه می‌گوید، تلویحاً می‌رساند.
+The overall mood of the poem is melancholy. | حال‌وهوای کلی شعر اندوهگین است.
+The review is harsh but fair. | نقد تند اما منصفانه است.
+The writer uses humor to soften the message. | نویسنده از طنز برای نرم کردن پیام استفاده می‌کند.
+>> When we read, we should ask not only what the author says, but how. | هنگام خواندن نه‌تنها باید بپرسیم نویسنده چه می‌گوید، بلکه چگونه.
+>> Is the tone serious, playful, angry, or ironic? | لحن جدی است، شوخ، خشمگین یا طعنه‌آمیز؟
+>> Does the writer seem neutral, or clearly biased? | نویسنده بی‌طرف به نظر می‌رسد یا آشکارا جانب‌دار؟
+>> Often the most important message lies between the lines. | اغلب مهم‌ترین پیام میان سطرها نهفته است.
+>> Good readers notice what is implied as well as what is stated. | خوانندگان خوب هم آن‌چه گفته شده و هم آن‌چه تلویحاً آمده را می‌بینند.
+>> This skill makes you a sharper and more critical thinker. | این مهارت تو را اندیشمندی تیزبین‌تر و نقادتر می‌کند.
+
+## 132 | C2 | جمله‌های بلند و پیچیده
+Had I known how difficult it would be, I might never have started. | اگر می‌دانستم چقدر سخت است، شاید هرگز شروع نمی‌کردم.
+The man who sold us the house, whom we trusted, had lied. | مردی که خانه را به ما فروخت و به او اعتماد داشتیم، دروغ گفته بود.
+What surprised everyone was not the result but how quickly it came. | آن‌چه همه را شگفت‌زده کرد نتیجه نبود، بلکه سرعت رسیدنش بود.
+Having finished the report, she finally allowed herself to relax. | پس از تمام کردن گزارش، بالاخره به خودش اجازه استراحت داد.
+Not only did the plan fail, but it also cost us dearly. | نه‌تنها نقشه شکست خورد، بلکه برایمان گران هم تمام شد.
+The more you practice, the more natural it becomes. | هر چه بیشتر تمرین کنی، طبیعی‌تر می‌شود.
+Whatever you decide, I'll support you all the way. | هر تصمیمی بگیری، تا آخرش پشتت هستم.
+Although exhausted, the team refused to give up. | تیم با وجود خستگی شدید حاضر نشد تسلیم شود.
+It was only when I left home that I understood my parents. | فقط وقتی خانه را ترک کردم بود که پدر و مادرم را فهمیدم.
+So complex was the problem that no one could solve it. | مسئله آن‌قدر پیچیده بود که هیچ‌کس نتوانست حلش کند.
+Were it not for her help, we would still be lost. | اگر کمک او نبود، هنوز سردرگم بودیم.
+Much as I admire him, I can't agree with his decision. | هرچقدر هم تحسینش کنم، نمی‌توانم با تصمیمش موافق باشم.
+>> Had I known, when I first arrived, how long the journey would be, I might have turned back. | اگر هنگام رسیدن می‌دانستم این سفر چقدر طول می‌کشد، شاید برمی‌گشتم.
+>> The language, which had once seemed impossible, slowly became my own. | زبانی که زمانی ناممکن به نظر می‌رسید، آرام‌آرام از آنِ من شد.
+>> What helped most was not grammar books, but conversations with real people. | آن‌چه بیشترین کمک را کرد کتاب‌های دستور نبود، بلکه گفت‌وگو با آدم‌های واقعی بود.
+>> The more mistakes I made, the less afraid I became. | هر چه بیشتر اشتباه کردم، کمتر ترسیدم.
+>> Only now, looking back, do I see how far I have come. | فقط حالا که به عقب نگاه می‌کنم، می‌بینم چقدر راه آمده‌ام.
+>> Much as it challenged me, I wouldn't change a thing. | هرچقدر هم که سخت بود، هیچ چیزش را عوض نمی‌کردم.
