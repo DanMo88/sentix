@@ -1,0 +1,5 @@
+# optional whole-sentence readings (connected American speech); default = words joined
+What is your name? = وَریز یُر نِیم؟
+Nice to meet you. = نایس تِ میت یو.
+I'm good, thank you. = آیم گود، ثَنک یو.
+Nice to meet you! How are you? = نایس تِ میت یو! هاو آر یو؟

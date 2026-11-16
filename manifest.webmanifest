@@ -1,0 +1,21 @@
+{
+  "id": "/sentencify/",
+  "name": "Sentencify",
+  "short_name": "Sentencify",
+  "description": "Sentencify — جمله‌سازی انگلیسی با لهجه آمریکایی از A1 تا C2 برای فارسی‌زبان‌ها.",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/sentencify/?source=pwa",
+  "scope": "/sentencify/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#4f46e5",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}
