@@ -86,6 +86,10 @@ button, .tile { touch-action: manipulation; -webkit-tap-highlight-color: transpa
 .row.locked { opacity: .55; }
 .row.locked .num { background: #e5e7eb; color: #6b7280; }
 .lock { font-size: 0.95em; }
+/* Home lesson list: every lesson of the level in one vertically scrollable page (home only). */
+.scr.home-all { overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.scr.home-all > * { flex-shrink: 0; }
+.scr.home-all .list { flex: none; min-height: 0; overflow: visible; }
 .pager { display: flex; justify-content: center; align-items: center; gap: 1.2em; font-weight: 700; font-size: 0.9em; color: var(--mut); }
 .pg { width: 2.4em; height: 2.2em; border-radius: 0.7em; background: #fff; border: 2px solid #e0e7ff; color: var(--pri); font-size: 1.2em; font-weight: 900; line-height: 1; }
 .toast { position: absolute; left: 1em; right: 1em; bottom: max(4em, env(safe-area-inset-bottom)); padding: 0.7em 1em; border-radius: 1em; background: var(--ink); color: #fff; font-weight: 700; font-size: 0.9em; text-align: center; box-shadow: 0 0.5em 2em #0004; animation: up .2s ease; }

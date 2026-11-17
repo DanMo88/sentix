@@ -118,10 +118,7 @@
       return `<button type="button" class="lvl${state.level === lv.id ? " on" : ""}" data-action="level" data-level="${lv.id}" aria-pressed="${state.level === lv.id}"><bdi dir="ltr" lang="en">${lv.id}</bdi><small>${toFa(d)}/${toFa(lv.lessons.length)}</small></button>`;
     }).join("");
     const level = course.levels.find((l) => l.id === state.level) || course.levels[0];
-    const pages = Math.max(1, Math.ceil(level.lessons.length / state.perPage));
-    state.page = Math.min(state.page, pages - 1);
-    const slice = level.lessons.slice(state.page * state.perPage, (state.page + 1) * state.perPage);
-    const rows = slice.map((l) => {
+    const rows = level.lessons.map((l) => {
       if (l.locked) {
         return `<li><button type="button" class="row locked" data-action="locked" data-id="${l.id}"><span class="num">${toFa(l.id)}</span><span class="txt"><span class="t">${rich(l.titleFa)}</span><span class="s">در نسخه کامل</span></span><span class="lock" aria-hidden="true">🔒</span></button></li>`;
       }
@@ -129,7 +126,7 @@
       const sub = done ? "تمام شد" : inProg ? "ادامه · جمله " + toFa(at + 1) + " از " + toFa(l.count) : toFa(l.count) + " جمله" + (l.id === nextId ? " · نوبت توست" : "");
       return `<li><button type="button" class="row${done ? " done" : ""}${inProg ? " prog" : ""}" data-action="open" data-id="${l.id}"><span class="num">${done ? iconCheck : toFa(l.id)}</span><span class="txt"><span class="t">${rich(l.titleFa)}</span><span class="s">${sub}</span></span>${done ? '<span class="badge">تمام شد</span>' : inProg ? '<span class="badge go">ادامه</span>' : ""}</button></li>`;
     }).join("");
-    return `<section class="scr home">
+    return `<section class="scr home home-all" data-level="${level.id}">
       ${head}
       <p class="h-sub">جمله${Z}سازی انگلیسی با لهجه${Z} آمریکایی · <bdi dir="ltr" lang="en">A1–C2</bdi></p>
       <div class="hero"><div class="hero-top"><b>${toFa(doneCount)} از ${toFa(lessons.length)} درس تمام شده</b><button type="button" class="inst" data-install>📲 نصب اپ</button></div>
@@ -138,7 +135,6 @@
       <div class="lvls" role="group" aria-label="سطح">${tabs}</div>
       <p class="lvl-note"><b>${esc(level.titleFa)}</b> · ${esc(LEVEL_NOTE[level.id] || "")}</p>
       <ol class="list">${rows}</ol>
-      <div class="pager"><button type="button" class="pg" data-action="page" data-dir="-1" ${state.page === 0 ? "disabled" : ""} aria-label="صفحه قبل">›</button><span>${toFa(state.page + 1)} از ${toFa(pages)}</span><button type="button" class="pg" data-action="page" data-dir="1" ${state.page >= pages - 1 ? "disabled" : ""} aria-label="صفحه بعد">‹</button></div>
       ${state.lockMsg ? `<p class="toast" role="status">${esc(state.lockMsg)}</p>` : ""}
     </section>`;
   }
@@ -224,11 +220,18 @@
   function render() {
     app.dataset.screen = state.screen;
     document.body.dataset.screen = state.screen;
+    const prev = app.querySelector(".home-all");
+    const keep = prev && state.screen === "home" && prev.dataset.level === state.level ? prev.scrollTop : 0;
     app.innerHTML = state.screen === "home" ? renderHome()
       : state.screen === "loading" ? `<section class="scr lesson">${topBar("…", 0, "درس " + toFa(state.lessonId))}<p class="fb">${state.loadError ? esc(state.loadError) : "در حال آماده" + Z + "سازی صداها…"}</p></section>`
       : state.screen === "done" ? renderDone() : renderLesson();
     state.shake = false; state.popId = null;
-    if (state.screen === "home") paginate();
+    if (state.screen === "home") {
+      /* Home is the one screen allowed to scroll: all lessons of the level in one list. */
+      const scr = app.querySelector(".home-all");
+      if (scr) { scr.style.fontSize = "16px"; scr.scrollTop = keep; }
+      return;
+    }
     fit();
   }
   /* Shrink the screen's base font until it fits one viewport (no scrolling, ever). */
@@ -240,19 +243,6 @@
     while (scr.scrollHeight > scr.clientHeight + 1 && size > 10) {
       size -= 0.5;
       scr.style.fontSize = size + "px";
-    }
-  }
-  function paginate() {
-    const list = app.querySelector(".list");
-    const row = list && list.querySelector("li");
-    if (!list || !row) return;
-    const gap = parseFloat(getComputedStyle(list).rowGap) || 0;
-    const per = Math.max(1, Math.floor((list.clientHeight + gap) / (row.offsetHeight + gap)));
-    if (per !== state.perPage) {
-      const first = state.page * state.perPage;
-      state.perPage = per;
-      state.page = Math.floor(first / per);
-      app.innerHTML = renderHome();
     }
   }
   let rz = 0;
@@ -446,7 +436,6 @@
       clearTimeout(lockTimer);
       lockTimer = setTimeout(() => { state.lockMsg = ""; if (state.screen === "home") render(); }, 2600);
     } else if (a === "level") { state.level = btn.dataset.level; state.page = 0; state.lockMsg = ""; render(); }
-    else if (a === "page") { state.page += Number(btn.dataset.dir); render(); }
     else if (a === "home") goHome();
     else if (a === "restart") { progress.at[state.lesson.id] = 0; save(); openLesson(state.lesson.id, true); }
     else if (a === "take-help") takeHelp();

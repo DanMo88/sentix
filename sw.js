@@ -1,10 +1,10 @@
 // HTML/JSON: network-first · css/js/manifest: stale-while-revalidate
 // media (audio/img/fonts/icons): cache-on-demand · cross-origin: never touched
-const V = 'sf-v10';
+const V = 'sf-v11';
 const SHELL = [
   './', 'index.html',
-  'css/styles.css?v=10', 'js/app.js?v=10', 'js/speech.js?v=10', 'js/install.js?v=10',
-  'manifest.webmanifest', 'data/course.json?v=10',
+  'css/styles.css?v=11', 'js/app.js?v=11', 'js/speech.js?v=11', 'js/install.js?v=11',
+  'manifest.webmanifest', 'data/course.json?v=11',
   'fonts/Vazirmatn-Regular.woff2', 'fonts/Vazirmatn-Bold.woff2', 'fonts/Vazirmatn-Black.woff2',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png',
   'images/shir-o-khorshid.svg', 'images/us.svg', 'favicon.svg'
